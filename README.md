@@ -21,3 +21,8 @@ Extensiones de VSCode
 - Tokyo Night (Tema)
 - Material Icon Theme (Iconos)
 - TypeScript Importer (Opcional)
+
+## Principales referencias del curso
+
+- [**Clean JavaScript** de Miguel A. Gomez](https://cleanjavascript.es/)
+- [**Refactoring Guru**: Khmelnitske shosse](https://refactoring.guru/)
