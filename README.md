@@ -68,3 +68,47 @@ Ya sea el cliente, el proveedor con recursos o el propio desarrollador dedicando
 - "Código Limpio es aquel que se ha escrito con la intención de que otra persona (o tú mismo en el futuro) lo entienda." - **Carlos Blé**
 - "Nuestro código tiene que ser simple y directo, debería leerse con la misma facilidad que un texto bien escrito." - **Grady Booch**
 - "Programar es el arte de decirle a otro humano lo que quieres que la computadora haga." - **Donald Knuth**
+
+## Nombres pronunciables y expresivos
+
+**_Mal_**
+
+```ts
+const n = 53;
+
+const tx = 0.15;
+
+const cat = 'T-Shirts';
+
+const ddmmyyyy = new Date('August 15, 1965 00:00:00');
+```
+
+**_Mejor_**
+
+```ts
+const numberOfUnits = 53;
+
+const tax = 0.15;
+
+const category = 'T-Shirts';
+
+const birthDate = new Date('August 15, 1965 00:00:00');
+```
+
+## Ausencia de información técnica en nombres
+
+**_Mal_**
+
+```ts
+class AbstractUser {}
+class UserMixin {}
+class UserImplementation {}
+interface UserInterface {}
+```
+
+**_Mejor_**
+
+```ts
+class User {}
+interface User {}
+```
