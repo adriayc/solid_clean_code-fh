@@ -112,3 +112,92 @@ interface UserInterface {}
 class User {}
 interface User {}
 ```
+
+## Nombres según el tipo de dato
+
+### Arreglos - Arrays
+
+**_Mal_**
+
+```ts
+const fruit = ['manzana', 'platano', 'fresa'];
+```
+
+**_Regular_**
+
+```ts
+const fruitList = ['manzana', 'platano', 'fresa'];
+```
+
+**_Bueno_**
+
+```ts
+const fruits = ['manzana', 'platano', 'fresa'];
+```
+
+**_Mejor_**
+
+```ts
+const fruitNames = ['manzana', 'platano', 'fresa'];
+```
+
+### Booleanos - Booleans
+
+**_Mal_**
+
+```ts
+const open = true;
+const write = ture;
+const fruit = true;
+const active = false;
+const noValues = true;
+const notEmpty = true;
+```
+
+**_Mejor_**
+
+```ts
+const isOpen = true;
+const canWrite = true;
+const hasFruir = true;
+const isActive = false;
+const hasValues = false;
+const isEmpty = false;
+```
+
+### Números
+
+**_Mal_**
+
+```ts
+const fruits = 3;
+const cars = 10;
+```
+
+**_Better_**
+
+```ts
+const maxFruits = 5;
+const minFruits = 1;
+const totalFruits = 3;
+
+const totalOfCars = 5;
+```
+
+### Funciones
+
+**_Mal_**
+
+```ts
+createUserIfNotExists();
+updateUserIfNotEmpty();
+sendEmailIfFieldsValid();
+```
+
+**_Mejor_**
+
+```ts
+createUser();
+updateUser();
+sendEmail();
+```
