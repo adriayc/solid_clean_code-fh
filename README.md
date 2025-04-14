@@ -201,3 +201,35 @@ createUser();
 updateUser();
 sendEmail();
 ```
+
+## Clases
+
+- El nombre es lo más importante de la clase.
+- Formados por un sustantivo o frases de sustantivo.
+- No deben de ser muy genéricos.
+- Usar UpperCamelCase
+
+**_Mal_**
+
+```ts
+class Manager {}
+class Data {}
+class Info {}
+class Individual {}
+class Processor {}
+class SpecialMonsterView {}
+```
+
+3 preguntas para determinar save si es un buen nombre.
+
+- ¿Qué exactamente hace la clase?
+- ¿Cómo exactamente esta clase realiza cierta tarea?
+- ¿Hay algo específico sobre su ubicación?
+
+_Nota: Si algo no tiene sentido, remuévalo o refactoriza._
+
+Más palabras !== mejor nombre
+
+```ts
+class SpecialViewingCaseMonsterEventsHandlerActivitySingleton {}
+```
