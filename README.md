@@ -233,3 +233,115 @@ Más palabras !== mejor nombre
 ```ts
 class SpecialViewingCaseMonsterEventsHandlerActivitySingleton {}
 ```
+
+## Funciones
+
+- "Sabemos que estamos desarrollando código limpio cuando cada función hace exactamente lo que su nombre indica" - **_Ward Cunningham_**
+
+**_Mejor_**
+
+```ts
+function sendEmail(toWhom: string): boolean {
+  // Verificar correo
+  if (!toWhom.includes('@')) return false;
+
+  // Construir el cuerpo o mensaje
+
+  // Enviar correo
+
+  // Si todo sale bien
+  return true;
+}
+```
+
+**_Mal_**
+
+```ts
+function sendEmail(): boolean {
+  // Verificar si el usuario existe
+
+  // Revisar contraseña
+
+  // Crear usuario en Base de datos
+
+  // Si todo sale bien
+  return true;
+}
+```
+
+## Parámetros y argumentos
+
+Parámetros
+
+```ts
+// Parámetros
+function sendEmail(toWhom: string): boolean {
+  // ...
+
+  // Si todo sale bien
+  return true;
+}
+```
+
+Argumentos
+
+```ts
+// Argumentos
+sendEmail('adriano@mail.com');
+```
+
+- Limitar a 3 parámetros posicionales
+
+**_Bien_**
+
+```ts
+function sendEmail(toWhom: string, from: string, body: string): boolean {}
+```
+
+**_No muy bien_**
+
+```ts
+function sendEmail(
+  toWhom: string,
+  from: string,
+  body: string,
+  subject: string,
+  apikey: sring
+): boolean {}
+```
+
+**_Mejor_**
+
+- Desestructurar los parámetros del objecto
+
+```ts
+interface SendEmailOptions {
+  toWhom: string;
+  from: string;
+  body: string;
+  subject: string;
+  apikey: string;
+}
+
+function sendEmail({
+  toWhom,
+  from,
+  body,
+  subject,
+  apikey,
+}: SendEmailOptions): boolean {}
+```
+
+**_No muy bien_**
+
+```ts
+function sendEmail(
+  toWhom: string,
+  from: string,
+  body: string,
+  subject: string,
+  apikey: sring
+): boolean {}
+```
+
+- Ordernar alfabeticamente los parametros
