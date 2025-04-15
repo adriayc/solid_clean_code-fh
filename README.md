@@ -345,3 +345,12 @@ function sendEmail(
 ```
 
 - Ordernar alfabeticamente los parametros
+
+# Funciones (Otras recomendaciones)
+
+- Simplicidad es fundamental.
+- Funciones de tamaño reducido.
+- Funciones de una sola línea sin causar complejidad.
+- Menos de 20 líneas.
+- Evitar el uso del "else".
+- Prioriza el uso de la condicional ternaria.
