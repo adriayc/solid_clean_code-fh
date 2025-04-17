@@ -363,3 +363,62 @@ function sendEmail(
 - Simplificar las pruebas.
 - Ayuda a centralizar procesos.
 - Aplicar el princio DRY, usualmente lleva a refactorizar.
+
+## Estructura de clases
+
+"El buen código parece estar escrito por alguien a quien le importa". - **_Michael Feathers_**
+
+**Comenzer con lista de propiedades.**
+
+1. Propiedades estáticas.
+2. Propiedades públicas.
+3. Propiedades privadas de último.
+
+**Métodos**
+
+1. Empezando por los constructores estáticos.
+2. Luego el constructor.
+3. Seguidamente métodos estáticos.
+4. Métodos privados después.
+5. Resto de métodos de instancia ordenados de mayor a menor importancia.
+6. Getters y Setters al final
+
+```ts
+class HtmlElement {
+  // Propiedades
+  public static domReady: boolean = false;
+
+  private _id: string;
+  private type: string;
+  private updatedAt: number;
+
+  // Constructores
+  // constructor statico
+  static createInput(id: string) {
+    return new HtmlElement(id, 'input');
+  }
+
+  // constructor por defecto
+  constructor() {
+    this._id = id;
+    this.type = type;
+    this.updatedAt = Date.now();
+  }
+  // constructor privado
+
+  // Metodos
+  // metodos staticos
+  // metodos privados
+
+  // resto de métodos (ordenados de mayor a menor importancia)
+  setType(type: string) {
+    this.type = type;
+    this.updatedAt = Date.now();
+  }
+
+  // getters y setters
+  get id(): string {
+    return this.id;
+  }
+}
+```
