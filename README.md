@@ -422,3 +422,34 @@ class HtmlElement {
   }
 }
 ```
+
+## Comentarios
+
+- Muchos de los comentarios que verás en el código lucen así.
+  - Inutiles.
+  - Redundantes.
+- Es horrible leer código de otros.
+
+```ts
+const name = 'John Doe';
+
+// Si name es igual a 'John Doe'
+if (name === 'John Dow') {
+  // entonces...
+}
+```
+
+Evita usar comentarios, pero...
+
+_Cuando usamos librerías de terceros, APIS, frameworks, etc. nos encontraremos ante situaciones en las que escribir un comentario será mejor que dejar una solución compleja o un hack sin explicacion_
+
+**Los comentarios deberían de ser una excepción, no la regla.**
+
+"No comentes el código mal escrito, reescríbelo" - **_Brian W. Kernighan_**
+
+**Recuerda:**
+Nuestro código debe de ser suficientemente auto explicativo.
+
+**_Pero a veces es necesario comentarlo_**
+
+**¿El por qué? En lugar del ¿qué? o ¿cómo?**
