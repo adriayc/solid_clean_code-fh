@@ -453,3 +453,79 @@ Nuestro código debe de ser suficientemente auto explicativo.
 **_Pero a veces es necesario comentarlo_**
 
 **¿El por qué? En lugar del ¿qué? o ¿cómo?**
+
+## Uniformidad en el proyecto
+
+Problemas similares, soluciones similares.
+
+**_Estructura de nombre de los metodos_**
+
+```ts
+const createProduct() {}
+const updateProduct() {}
+const deleteProduct() {}
+```
+
+**_No uniforme_**
+
+```ts
+const createNewUser() {}
+const modifyUser() {}
+const removeUser() {}
+```
+
+**_Lo ideal_**
+
+```ts
+const createUser() {}
+const updateUser() {}
+const deleteUser() {}
+```
+
+También, es aplicable en la estructura de directorios (depende del framework o lenguage que se esta utilizando).
+
+**_No uniforme_**
+
+```ts
+▼ components (Folder)
+  ► product-list (Folder)
+    product-item.ts (File)
+```
+
+```ts
+▼ components (Folder)
+  ▼ product-list (Folder)
+      product-list.html (File)
+      product-list.ts (File)
+    product-item.ts (File)
+```
+
+**_Lo ideal_**
+
+```ts
+▼ components (Folder)
+  ▼ product-list (Folder)
+      product-list.html (File)
+      product-list.ts (File)
+  ▼ product-list (Folder)
+      product-list.html (File)
+      product-item.ts (File)
+```
+
+Indentación (priorizar los estandares de la organizacion, las convenciones del lenguaje y del equipo de desarrallo)
+
+```ts
+class UserSettings extends User {
+  constructor(
+    public workinkDirectory: string,
+    public lastFolerOpen: string,
+    email: string,
+    role: string,
+    name: string,
+    gender: Gender,
+    birthdate: Date
+  ) {
+    super(email, role, new Date(), name, gender, birthdate);
+  }
+}
+```
