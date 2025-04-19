@@ -554,3 +554,45 @@ Garantiza una única instancia de la clase a lo largo de toda la aplicación.
 - Pude ser modificado por cualquera y en cualquier momento.
 - No es rastreable.
 - Difícil de testar debido a su ubicación.
+
+### Alto acoplamiento
+
+Lo ideal es tener bajo acoplamiento y buena cohesión.
+
+**Pero qué significa eso**
+
+- Alto acomplamiento y baja cohesión.
+- Bajo acomplamiento y alta cohesión.
+
+**Desventajas**
+
+- Un cambio en un módulo por lo general provoca un efecto dominó de los cambios en otros modulos.
+- El ensamblaje de módulos puede requerir más esfuerzo y/o tiempo debido a la mayor dependencia entre módulos.
+- Un módulo en particula puede ser más difícil de reutilizar y/o probar porque se deben incluir módulos dependientes.
+
+Posibles soluciones
+
+- **"A"** tiene un atributo que se refiere a **"B"**.
+- **"A"** llama a los servicios de un objecto **"B"**.
+- **"A"** tiene un metodo que hace referencia a **"B"** (a través del tipo de retorno o parámetro).
+- **"A"** es una subclase de (o implementa) la clase **"B"**.
+
+"Queremos diseñar componentes que sean auto-contenidos, aut0 suficientes e independientes. Con un objetivo y un propósito bien definido." - **The Pragmatic Programer**
+
+#### Cohesión
+
+Lo ideal es tener bajo acoplamiento y buena cohesión.
+**_La cohesión se refiere a lo que la clase (o módulo) puede hacer._**
+
+- **La baja cohesión** significaría que la clase realiza un gran variedad de acciones: es amplia, no se enfoca en lo que debe hacer.
+- **Alta cohesión** significa que la clase se enfoca en lo que deberia estar haciendo, es decir, solo métodos relacionados con la intención de la clase.
+
+#### Acoplamiento
+
+Lo ideal es tener bajo acoplamiento y buena cohesión.
+**_Se refiere a cuán realacionadas o dependientes son dos clases o módulos entre sí._**
+
+- **En bajo acoplamiento**, cambiar algo importante en una clase no debería afectar a la otra.
+- **En alto acoplamiento**, dificultaría el cambio y el mantenimiento de su código: dado que las clases están muy unidas, hacer un cambio podría requerir una renovacion completa del sistema.
+
+**_Un buen diseño de software tiene alta cohesión y bajo acoplamiento._**
