@@ -529,3 +529,28 @@ class UserSettings extends User {
   }
 }
 ```
+
+## Acrónimo STUPID
+
+6 Code Smells que debemos de evitar.
+
+- **S**ingleton: patrón singleton.
+- **T**ight Coupling: Alto acoplamiento.
+- **U**ntestability: código no probable (unit test).
+- **P**remature optimization: optimizaciónes prematuras.
+- **I**ndescriptive Naming: nombres pocos descriptivos.
+- **D**uplication: duplicidad de código, no aplicar el pincipio DRY.
+
+### Patrón Singleton
+
+**Pros**
+Garantiza una única instancia de la clase a lo largo de toda la aplicación.
+
+**_¿Por qué code smell?_**
+
+**Cons**
+
+- Vive en el contexto global.
+- Pude ser modificado por cualquera y en cualquier momento.
+- No es rastreable.
+- Difícil de testar debido a su ubicación.
