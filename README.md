@@ -596,3 +596,53 @@ Lo ideal es tener bajo acoplamiento y buena cohesión.
 - **En alto acoplamiento**, dificultaría el cambio y el mantenimiento de su código: dado que las clases están muy unidas, hacer un cambio podría requerir una renovacion completa del sistema.
 
 **_Un buen diseño de software tiene alta cohesión y bajo acoplamiento._**
+
+### Código no probable
+
+Código dificilmente testeable.
+
+- Código con alto acomplamiento.
+- Código con mucha dependencias no inyectadas.
+- Dependencias en el contexto global (Tipo Singleton).
+
+**_Debemos de tener en mente las pruebas desde la creación del código._**
+
+### Optimizaciones prematuras
+
+Mantener abiertas las opciones retrasando la toma de decisiones nos permite darle mayor relevancia a lo que es más importante en una aplicación.
+
+No debemos anticiparnos a los requisitos y desarrollar abstracciones innecesarias que puedan añadir complejidad accidental.
+
+**Complejidad accidental**
+Cuando implementamos una solución compleja a la mínima indispensable.
+
+**Complejidad esencial**
+La complejidad es inherente al problema.
+
+**_Debe existir un balance entre la complejidad esencial y accidental._**
+
+### Nombres poco descriptivos
+
+- Nombres de variables mal nombradas.
+- Nombres de clases genéricas.
+- Nombres de funciones mal nombradas.
+- Ser muy especifico o demasiado genérico.
+
+_La única medida de calidad de código es que "WTF" por minuto._
+
+### Duplicidad de Código
+
+No aplicar el principio DRY.
+
+**_Real_**
+
+- Código es idéntico y cumple la misma función.
+- Un cambio implicaría actualizar todo el código idéntico en varios lugares.
+- Incrementa posibilidades de error humano al olvidar una parte para actualizar.
+- Mayor cantidad de pruebas innecesarias.
+
+**_Accidental_**
+
+- Código luce similar pero cumple funciones distintas.
+- Cuando hay un cambio, sólo hay que modificar un sólo lugar.
+- Este tipo de duplicidad se puede trabajar con parámetros u optimizaciones.
