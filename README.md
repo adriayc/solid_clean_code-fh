@@ -706,3 +706,49 @@ Más de tres y cuatro parámetros para una método.
 - Comprueba qué valores se pasan a los parámetros. Si algunos de los argumentos son simplemente resultados de llamadas a métodos de otro objeto, usa "Reemplazar Parámetro con Llamada a Método". Este objeto puede colocarse en el campo de su propia clase o pasarse como parámetro de un método.
 - En lugar de pasar un grupo de datos recibidos de otro objeto como parámetros, pase el objeto mismo al método, utilizando "Preservar Todo el Objeto".
 - Pero si estos parámetros provienen de diferentes fuentes, puedes pasarlos como un único objeto de parámetro a través de "Introducir Objeto de Parámetro".
+
+### Acopladores
+
+Todos los olores de este grupo contribuyen al acomplamiento excesivo entre clases o muestran lo que sucede si el acoplamiento se reemplaza por una delagación excesiva.
+
+#### Feature Envy
+
+**Signos y síntomas**
+Un método accede a los datos de otros objeto más que a sus propios datos.
+
+**Tratamiento**
+Como regla general, si los datos cambian al mismo tiempo, deben conservarse en el mismo lugar. Normalmente, los datos y las funciones que los utilizan se modifican juntos (aunque puede haber excepciones).
+
+- Si claramente un método debe moverse a otro lugar, utilice "Mover Método".
+- Si solo una parte de un método accede a los datos de otro objeto, utilice "Extraer Método" para mover la parte en cuestión.
+- Si un método utiliza funciones de varias clases, primero determine qué clase contiene la mayoría de los datos utilizados. Luego, coloque el método en esta clase junto con los demás datos. Como alternativa, utilice "Extraer Método" para dividir el método en varias partes que puedan ubicarse en diferentes lugares de las distintas clases.
+
+#### Inappropriate Intimacy
+
+**Signos y síntomas**
+Una clase utiliza los campos y métodos internos de otra clase.
+
+**Tratamiento**
+
+- La solución más sencilla es usar el "Método Mover" y el "Campo Mover" para mover partes de una clase a la clase donde se usan. Sin embargo, esto solo funciona si la primera clase realmente no necesita estas partes.
+- Otra solución es utilizar "Extraer Clase" y "Ocultar Delegado" en la clase para hacer que las relaciones del código sean “oficiales”.
+- Si las clases son mutuamente interdependientes, debe utilizar "Cambiar Asociación Bidireccional a Unidireccional".
+- Si esta “intimidad” es entre una subclase y la superclase, considere "Reemplazar Delegación con Herencia".
+
+#### Message Chains
+
+**Signos y síntomas**
+En el código se ve una serie de llamadas similares a `$a->b()->c()->d()`.
+
+**Tratamiento**
+
+- Para eliminar una cadena de mensajes, utilice "Ocultar Delegado".
+- A veces es mejor pensar por qué se usa el objeto final. Quizás tenga sentido usar el "Método Extraer" para esta función y moverlo al principio de la cadena mediante el "Método Mover".
+
+#### Middle Man
+
+**Signos y síntomas**
+Si una clase sólo realiza una acción, delegando trabajo a otra clase, ¿por qué existe?.
+
+**Tratamiento**
+Si la mayoría de las clases de un método delegan a otra clase, es necesario eliminar el intermediario.
