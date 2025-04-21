@@ -646,3 +646,63 @@ No aplicar el principio DRY.
 - Código luce similar pero cumple funciones distintas.
 - Cuando hay un cambio, sólo hay que modificar un sólo lugar.
 - Este tipo de duplicidad se puede trabajar con parámetros u optimizaciones.
+
+## Otros ["code smells"](https://refactoring.guru/refactoring/smells)
+
+Que merecen tener su mención especial.
+
+### Inflación
+
+Son código, métodos y clases que ha crecido a propornciones tan descomunales que dificultan su manejo. Normalmente, estos problemas no aparecen de inmediato, sino que se acumulan con el tiempo a medida que el programa evoluciona.
+
+#### Long Method
+
+**Signos y síntomas**
+Un método contiene demasiadas líneas de código. Generalmente, cualquier método con más de diez líneas debería generar dudas.
+
+**Tratamiento**
+Como regla general, si necesitas comentar algo dentro de un método, debes tomar este código y añadirlo a un nuevo método. Incluso una sola línea puede y debe dividirse en un método independiente si requiere explciacioens. Y si el método tiene un nombre descriptivo, nadie necesitará revisar el código para ver qué hace.
+
+- Para reducir la longitud del cuerpo de un método, utilice "Extraer Método".
+- Si las varaibles y parámetros locales interfieren con la extraccion de un método, utilice "Reemplazar Temporarl con Consultas", "Introducir Objetos de Parámetros" o "Preservar Objeto Completo".
+- Si ninguna de las recetas anteriores ayuda, intente mover el método completo a un objeto separado mediante "Reemplazar Método con Objeto de Método".
+- Los operadores condicionales y los bucles son buan señal de que el código se puede mover a un método independiente. Para los condicionales, utilice "Descomponer Condicionales". Si los bucles interfieren, prueba "Extraer Método".
+
+#### Large Class
+
+**Signos y síntomas**
+Una clase contiene muchos campos/métodos/líneas de código.
+
+**Tratamiento**
+Cuando una clase tiene demasiadas funciones, piense en dividirla:
+
+- "Extraer Clase" ayuda si parte del comportamiento de la clase grande se puede separar en un componente separado.
+- "Extraer Subclase" ayuda si parte del comportamiento de la clase grande se puede implementar de diferentes maneras o se usa en casos excepcionales.
+- "Extraer Interfaz" ayuda si es necesario tener una lista de las operaciones y comportamientos que el cliente puede utilizar.
+- Si una clase grande ses ersponsable de la interfaz gráfica, puede intentar transladar algunos de sus datos y comportamiento a un objeto de dominio independiente. Para ello, podría ser necesario almacenar copias de algunos datos en dos ubicaciones y mantener la coherencia de los mismos. Los datos observados duplicados ofrecen una solución.
+
+#### Primitive Obsession
+
+**Signos y síntomas**
+
+- Uso de primitivos en lugar de pequeños objetoc para tareas simples (como moneda, rangos, cadenas especiales para números de teléfono, etc.)
+- Uso de constantes para codificar información (por ejemplo, una constante `USER_ADMIN_ROLE = 1` para referirse a usuarios con derechos de administrador).
+- Uso de constantes de cadena como nombres de campo para uso de arrays de datos.
+
+**Tratamiento**
+
+- Si tiene una gran variedad de campos primitivos, es posible agrupar algunos de ellos lógicamente en su propia clase. Mejor aún, también puede mover el comportamiento asociado a estos datos a la clase. Para ello, pruebe "Reemplazar Valor de Datos con Objeto".
+- Si se utilizan los valores de los campos primitivos en los parámetros del método, utilice "Introducir Objeto de Parámetro" o "Preservar Objeto Completo".
+- Cuando se codifican dato complicados en variables, utilice "Reemplazar Código de Tipo con Subclases" o "Reemplazar Código de Tipo con Estado/Estrategia".
+- Si hay arrays entre las variables, utilice "Reemplazar Array con Objeto".
+
+#### Long Parameter List
+
+**Signos y síntomas**
+Más de tres y cuatro parámetros para una método.
+
+**Tratamiento**
+
+- Comprueba qué valores se pasan a los parámetros. Si algunos de los argumentos son simplemente resultados de llamadas a métodos de otro objeto, usa "Reemplazar Parámetro con Llamada a Método". Este objeto puede colocarse en el campo de su propia clase o pasarse como parámetro de un método.
+- En lugar de pasar un grupo de datos recibidos de otro objeto como parámetros, pase el objeto mismo al método, utilizando "Preservar Todo el Objeto".
+- Pero si estos parámetros provienen de diferentes fuentes, puedes pasarlos como un único objeto de parámetro a través de "Introducir Objeto de Parámetro".
