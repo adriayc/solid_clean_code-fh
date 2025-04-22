@@ -777,3 +777,22 @@ Los principios SOLID nos indican cómo organizar nuestras funciones y estructura
 - Número elevado de importaciones.
 - Cantidad elevada de métodos públicos.
 - Excesivo número de líneas de código.
+
+### OCP (Open and Close Principle) - Principio de Abierto y Cerrado
+
+Es un principio que depende mucho del contexto.
+
+Establece que las entidades de software (clases, módulos, métodos, etc.) deben estar abiertas para la extensión, pero cerrado para la modificación.
+
+La forma más sencilla de demostrar este principio es conciderar un método que hace una cosa.
+
+`Escribir en archivo hola.txt → Nuevo requisitos → Escribir en archivo adios.txt`
+
+```ts
+writeFile(filename: string) {}
+
+writeFile('hola.txt');
+writeFile('adios.txt');
+```
+
+El principio abierto-cerrado también se puede lograr de muchas maneras, incluso mediante el uso de la herencia o mediante patrones deseño de composición como el patrón de estrategia.
