@@ -752,3 +752,19 @@ Si una clase sólo realiza una acción, delegando trabajo a otra clase, ¿por qu
 
 **Tratamiento**
 Si la mayoría de las clases de un método delegan a otra clase, es necesario eliminar el intermediario.
+
+## Principios SOLID
+
+Los principios SOLID nos indican cómo organizar nuestras funciones y estructuras de datos en componentes y cómo dichos componentes deben estar interconectados.
+
+- **S**ingle Responsability: Responsabilidad única.
+- **O**pen and Close: Abierto y cerrado.
+- **L**iskov Subtitution: Sustitución de Liskov.
+- **I**nterface Segregation: Segregación de interfaz.
+- **D**ependency Inversion: Inversión de dependencias.
+
+### SRP (Single Responsability Principle) - Principio de Responsabilidad Única
+
+"Nunca devería haver más de un motivo por el cual cambiar una clase o un módulo". - **_Robert C. Martin_**
+
+**_"tener una única responsabilidad" !== "hacer una única cosa"_**
