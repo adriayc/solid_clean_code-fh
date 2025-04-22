@@ -768,3 +768,12 @@ Los principios SOLID nos indican cómo organizar nuestras funciones y estructura
 "Nunca devería haver más de un motivo por el cual cambiar una clase o un módulo". - **_Robert C. Martin_**
 
 **_"tener una única responsabilidad" !== "hacer una única cosa"_**
+
+#### SRP - Detectar violaciones
+
+- Nombres de clases y módulos demasiados genéricos.
+- Cambios en el código suelen afectar la clase o módulo.
+- La clase involucra múltiples capas.
+- Número elevado de importaciones.
+- Cantidad elevada de métodos públicos.
+- Excesivo número de líneas de código.
