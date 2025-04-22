@@ -1,4 +1,5 @@
 import './style.css';
+import './solid/01-srp-final';
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <div>
