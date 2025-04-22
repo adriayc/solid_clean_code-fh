@@ -1,5 +1,6 @@
 import './style.css';
-import './solid/01-srp-final';
+// import './solid/01-srp-final';
+import './solid/02-ocp-final-a';
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <div>
