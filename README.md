@@ -796,3 +796,8 @@ writeFile('adios.txt');
 ```
 
 El principio abierto-cerrado también se puede lograr de muchas maneras, incluso mediante el uso de la herencia o mediante patrones deseño de composición como el patrón de estrategia.
+
+#### Detectar violaciones de OCP
+
+- Cambios normalmente afectan nuestra clase o módulo.
+- Cuando una clase o módulo afecta muchas capas. (Presentación, almacenamiento, etc.)
