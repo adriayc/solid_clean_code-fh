@@ -801,3 +801,14 @@ El principio abierto-cerrado también se puede lograr de muchas maneras, incluso
 
 - Cambios normalmente afectan nuestra clase o módulo.
 - Cuando una clase o módulo afecta muchas capas. (Presentación, almacenamiento, etc.)
+
+### LSP (Liskov Substitution Principle) - Principio de Sustitución de Liskov
+
+"Las funciones que utilicen punteros o referencias o clases base deben ser capaces de usar objetos de clases derivadas sin saberlo". - **_Robert C. Martin_**
+
+Doctora Barbara Jane Huberman, mas conocida como Barbara Liskov.
+
+**Turing Award**
+Por contribuciones a los fundamentos prácticos y teóricos del lenguaje de programación y el diseño de sistemas, especialmente relacionados con la abastracción de datos, la tolerancia a fallas y la computación distribuida.
+
+_"Siendo U un subtipo de T, cualquier instancia de T debería poder ser sustituida por cualquier instancia de U sin alterar las propiedades del sistema"_
