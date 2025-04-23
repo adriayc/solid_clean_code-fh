@@ -812,3 +812,11 @@ Doctora Barbara Jane Huberman, mas conocida como Barbara Liskov.
 Por contribuciones a los fundamentos prácticos y teóricos del lenguaje de programación y el diseño de sistemas, especialmente relacionados con la abastracción de datos, la tolerancia a fallas y la computación distribuida.
 
 _"Siendo U un subtipo de T, cualquier instancia de T debería poder ser sustituida por cualquier instancia de U sin alterar las propiedades del sistema"_
+
+### ISP (Interface Segregation Principal) - Principio de Segregación de Interfaz
+
+"Los clientes no deberían estar obligados a depender de interfaces que no utilicen" - **_Robert C. Martin_**
+
+_No es directamente aplicable en JS (es debilmente tipado). Es aplicable en programación orientado a objetos con lenguajes fuertemente tipados como: C#, Java o TS (superset de JavaScript) _
+
+**_Este principio establece que los clientes no deberían verse forzados a depender de interfaces que no usan._**
