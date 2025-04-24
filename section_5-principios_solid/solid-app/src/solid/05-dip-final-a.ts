@@ -1,10 +1,15 @@
 import { PostService } from './05-dip-final-b';
-import { JsonDataBaseService, LocalDataBaseService } from './05-dip-final-c';
+import {
+  JsonDataBaseService,
+  LocalDataBaseService,
+  WebApiPostService,
+} from './05-dip-final-c';
 
 // Main
 (async () => {
   // const provider = new JsonDataBaseService();
-  const provider = new LocalDataBaseService();
+  // const provider = new LocalDataBaseService();
+  const provider = new WebApiPostService();
 
   const postService = new PostService(provider);
 
