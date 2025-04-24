@@ -820,3 +820,7 @@ _"Siendo U un subtipo de T, cualquier instancia de T debería poder ser sustitui
 _No es directamente aplicable en JS (es debilmente tipado). Es aplicable en programación orientado a objetos con lenguajes fuertemente tipados como: C#, Java o TS (superset de JavaScript) _
 
 **_Este principio establece que los clientes no deberían verse forzados a depender de interfaces que no usan._**
+
+#### Detectar violaciones ISP
+
+- Si las interfaces que diseñamos nos obligan a violar los principios de Responsabilidad Única y Sustitución de Liskov.
