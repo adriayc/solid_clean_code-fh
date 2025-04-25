@@ -363,3 +363,169 @@ function sendEmail(
 - Simplificar las pruebas.
 - Ayuda a centralizar procesos.
 - Aplicar el princio DRY, usualmente lleva a refactorizar.
+
+## Estructura de clases
+
+"El buen código parece estar escrito por alguien a quien le importa". - **_Michael Feathers_**
+
+**Comenzer con lista de propiedades.**
+
+1. Propiedades estáticas.
+2. Propiedades públicas.
+3. Propiedades privadas de último.
+
+**Métodos**
+
+1. Empezando por los constructores estáticos.
+2. Luego el constructor.
+3. Seguidamente métodos estáticos.
+4. Métodos privados después.
+5. Resto de métodos de instancia ordenados de mayor a menor importancia.
+6. Getters y Setters al final
+
+```ts
+class HtmlElement {
+  // Propiedades
+  public static domReady: boolean = false;
+
+  private _id: string;
+  private type: string;
+  private updatedAt: number;
+
+  // Constructores
+  // constructor statico
+  static createInput(id: string) {
+    return new HtmlElement(id, 'input');
+  }
+
+  // constructor por defecto
+  constructor() {
+    this._id = id;
+    this.type = type;
+    this.updatedAt = Date.now();
+  }
+  // constructor privado
+
+  // Metodos
+  // metodos staticos
+  // metodos privados
+
+  // resto de métodos (ordenados de mayor a menor importancia)
+  setType(type: string) {
+    this.type = type;
+    this.updatedAt = Date.now();
+  }
+
+  // getters y setters
+  get id(): string {
+    return this.id;
+  }
+}
+```
+
+## Comentarios
+
+- Muchos de los comentarios que verás en el código lucen así.
+  - Inutiles.
+  - Redundantes.
+- Es horrible leer código de otros.
+
+```ts
+const name = 'John Doe';
+
+// Si name es igual a 'John Doe'
+if (name === 'John Dow') {
+  // entonces...
+}
+```
+
+Evita usar comentarios, pero...
+
+_Cuando usamos librerías de terceros, APIS, frameworks, etc. nos encontraremos ante situaciones en las que escribir un comentario será mejor que dejar una solución compleja o un hack sin explicacion_
+
+**Los comentarios deberían de ser una excepción, no la regla.**
+
+"No comentes el código mal escrito, reescríbelo" - **_Brian W. Kernighan_**
+
+**Recuerda:**
+Nuestro código debe de ser suficientemente auto explicativo.
+
+**_Pero a veces es necesario comentarlo_**
+
+**¿El por qué? En lugar del ¿qué? o ¿cómo?**
+
+## Uniformidad en el proyecto
+
+Problemas similares, soluciones similares.
+
+**_Estructura de nombre de los metodos_**
+
+```ts
+const createProduct() {}
+const updateProduct() {}
+const deleteProduct() {}
+```
+
+**_No uniforme_**
+
+```ts
+const createNewUser() {}
+const modifyUser() {}
+const removeUser() {}
+```
+
+**_Lo ideal_**
+
+```ts
+const createUser() {}
+const updateUser() {}
+const deleteUser() {}
+```
+
+También, es aplicable en la estructura de directorios (depende del framework o lenguage que se esta utilizando).
+
+**_No uniforme_**
+
+```ts
+▼ components (Folder)
+  ► product-list (Folder)
+    product-item.ts (File)
+```
+
+```ts
+▼ components (Folder)
+  ▼ product-list (Folder)
+      product-list.html (File)
+      product-list.ts (File)
+    product-item.ts (File)
+```
+
+**_Lo ideal_**
+
+```ts
+▼ components (Folder)
+  ▼ product-list (Folder)
+      product-list.html (File)
+      product-list.ts (File)
+  ▼ product-list (Folder)
+      product-list.html (File)
+      product-item.ts (File)
+```
+
+Indentación (priorizar los estandares de la organizacion, las convenciones del lenguaje y del equipo de desarrallo)
+
+```ts
+class UserSettings extends User {
+  constructor(
+    public workinkDirectory: string,
+    public lastFolerOpen: string,
+    email: string,
+    role: string,
+    name: string,
+    gender: Gender,
+    birthdate: Date
+  ) {
+    super(email, role, new Date(), name, gender, birthdate);
+  }
+}
+```
